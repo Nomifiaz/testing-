@@ -14,6 +14,9 @@ password:{
 },
 role:{
   type:String
+},
+nice:{
+  type :String
 }
 })
 const User=mongooes.model("User",userSchema)
