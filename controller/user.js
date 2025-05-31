@@ -39,11 +39,13 @@ const login= async(req,res)=>{
     if(!matchPassword){
       return res.status(400).json({message:"invalid email or password"})
     }
+    //add role in the token 
     const token= jwt.sign({id:user._id},JWT_SEC)
     res.status(200).json({message:"successfully login",user,token})
   } catch (error) {
     console.log(error)
-    return res.status(500).json({message:"error"})
+    return res.status(500).json({message:"error"
+    })
   }
 }
 module.exports = {userRegister,login};

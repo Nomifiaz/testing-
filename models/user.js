@@ -11,6 +11,9 @@ email:{
 },
 password:{
   type:String
+},
+role:{
+  type:String
 }
 })
 const User=mongooes.model("User",userSchema)
