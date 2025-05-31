@@ -5,7 +5,7 @@ const JWT_SEC="Nomi123"
 
 const userRegister = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password,role  } = req.body;
 
     const existuser = await User.findOne({ email });
     if (existuser) {
@@ -18,6 +18,7 @@ const userRegister = async (req, res) => {
       name,
       email,
       password: hashPassword,
+      role
     });
 
     res.status(201).json({ message: "User registered", user });
